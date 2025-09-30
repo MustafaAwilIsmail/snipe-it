@@ -3,7 +3,7 @@ name: Build, Scan and Push Docker Image to ECR
 on:
   push:
     branches:
-      - main
+      - master
 
 env:
   AWS_REGION: ${{ secrets.REGION }}
