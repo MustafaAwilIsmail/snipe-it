@@ -1,6 +1,9 @@
 FROM php:8.2-fpm-alpine AS builder
 
 WORKDIR /app
+# Install required PHP extensions for Composer dependencies
+RUN apk add --no-cache libzip-dev bzip2-dev oniguruma-dev icu-dev \
+    && docker-php-ext-install zip bcmath intl
 # Install Composer only
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 COPY composer.json composer.lock ./
