@@ -1,6 +1,8 @@
 FROM php:8.2-fpm-alpine AS builder
 
 WORKDIR /app
+# Install Composer only
+RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 COPY composer.json composer.lock ./
 RUN composer install --no-dev --optimize-autoloader
 COPY . .
