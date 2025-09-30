@@ -32,7 +32,7 @@ jobs:
         uses: aquasecurity/trivy-action@v1
         with:
           image-ref: ${{ env.ECR_REPOSITORY }}:${{ env.IMAGE_TAG }}
-          format: table
+          format: table # table
           exit-code: 1  # Fail the job if vulnerabilities are found
           severity: CRITICAL,HIGH  # Only fail for high or critical vulnerabilities
 
