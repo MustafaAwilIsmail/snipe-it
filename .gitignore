@@ -77,5 +77,6 @@ storage/ldap_client_tls.key
 *.tfstate
 *.tfstate.backup
 crash.log
-terraform.tfvars
-*.tfplan
+override.tf
+override.tf.json
+.terraform.lock.hcl
